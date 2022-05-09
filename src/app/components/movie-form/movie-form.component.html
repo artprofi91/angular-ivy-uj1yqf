@@ -1,0 +1,22 @@
+<h3>{{ movie?.title }}</h3>
+
+<div [formGroup]="formGroup">
+  <div class="row">
+    <label for="movie-type">Type: </label>
+    <input id="movie-type" disabled [value]="'Movie'" />
+  </div>
+  <div class="row">
+    <label for="movie-title">Movie title: </label>
+    <input id="movie-title" placeholder="title" formControlName="title" />
+  </div>
+  <div class="row">
+    <label for="movie-year">Year: </label>
+    <input id="movie-year" placeholder="year" formControlName="year" />
+  </div>
+  <div class="row">
+    <span>User: {{ userName$ | async }} </span>
+  </div>
+  <div class="row" *ngIf="isDeleted">This movie is deleted !</div>
+  <button (click)="cancel()">Cancel</button>
+  <button (click)="save()">Save</button>
+</div>
